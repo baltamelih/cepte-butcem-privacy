@@ -1,69 +1,247 @@
-# Gizlilik Politikası
+from pathlib import Path
 
-Son güncelleme: 22 Mayıs 2026
+html = """<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cepte Bütçem | Gizlilik Politikası</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --dark: #111827;
+      --muted: #6b7280;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+    }
 
-Cepte Bütçem | Gelir Gider Takibi uygulamasını kullandığınız için teşekkür ederiz.
+    * {
+      box-sizing: border-box;
+    }
 
-Bu gizlilik politikası, uygulamanın hangi verileri topladığını, nasıl kullandığını ve nasıl koruduğunu açıklamaktadır.
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.65;
+    }
 
-## Toplanan Veriler
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 18px;
+    }
 
-Cepte Bütçem uygulaması kullanıcı hesabı oluşturmaz ve kişisel kimlik bilgileri toplamaz.
+    .hero {
+      background: linear-gradient(135deg, #2563eb, #1e3a8a);
+      color: white;
+      border-radius: 28px;
+      padding: 34px 28px;
+      box-shadow: 0 18px 42px rgba(37, 99, 235, 0.22);
+      margin-bottom: 22px;
+    }
 
-Uygulama içerisinde oluşturduğunuz gelir-gider kayıtları yalnızca cihazınızda saklanır ve geliştiriciye gönderilmez.
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
 
-Ancak uygulama aşağıdaki üçüncü taraf hizmetlerini kullanmaktadır:
+    .hero p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      font-weight: 500;
+    }
 
-* Google AdMob
-* Firebase Analytics
-* Firebase Crashlytics
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(17, 24, 39, 0.06);
+      margin-bottom: 16px;
+    }
 
-Bu hizmetler aşağıdaki anonim verileri toplayabilir:
+    h2 {
+      margin-top: 0;
+      font-size: 21px;
+      letter-spacing: -0.2px;
+    }
 
-* Uygulama kullanım istatistikleri
-* Çökme raporları
-* Cihaz bilgileri
-* Reklam kimlikleri
+    p {
+      margin: 0 0 14px;
+    }
 
-## Verilerin Kullanımı
+    ul {
+      margin-top: 8px;
+      padding-left: 22px;
+    }
 
-Toplanan veriler aşağıdaki amaçlarla kullanılabilir:
+    li {
+      margin-bottom: 8px;
+    }
 
-* Uygulama performansını iyileştirmek
-* Hataları tespit etmek
-* Reklam gösterimini optimize etmek
-* Kullanıcı deneyimini geliştirmek
+    a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-## Veri Saklama
+    .muted {
+      color: var(--muted);
+    }
 
-Kullanıcı tarafından oluşturulan finansal kayıtlar yalnızca cihaz içerisinde saklanır.
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 18px 0 6px;
+    }
 
-Uygulama kaldırıldığında bu veriler cihazdan silinir.
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 26px;
+      }
 
-## Üçüncü Taraf Hizmetleri
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Cepte Bütçem | Gizlilik Politikası</h1>
+      <p>Son güncelleme: 22 Mayıs 2026</p>
+    </section>
 
-Uygulama aşağıdaki üçüncü taraf servisleri kullanabilir:
+    <section class="card">
+      <h2>Genel Bilgilendirme</h2>
+      <p>
+        Cepte Bütçem | Gelir Gider Takibi uygulamasını kullandığınız için teşekkür ederiz.
+        Bu gizlilik politikası, uygulamanın hangi verileri işlediğini, bu verilerin nasıl
+        kullanıldığını ve kullanıcı gizliliğinin nasıl korunduğunu açıklamaktadır.
+      </p>
+      <p>
+        Uygulama, kişisel bütçe takibini kolaylaştırmak amacıyla geliştirilmiş cihaz içi çalışan
+        bir gelir-gider takip uygulamasıdır.
+      </p>
+    </section>
 
-* Google AdMob
-* Firebase Analytics
-* Firebase Crashlytics
+    <section class="card">
+      <h2>Uygulama İçerisinde Oluşturulan Veriler</h2>
+      <p>
+        Kullanıcı tarafından uygulama içerisinde oluşturulan gelir, gider, kategori, not ve benzeri
+        kayıtlar yalnızca kullanıcının cihazında saklanır.
+      </p>
+      <p>
+        Bu kayıtlar geliştiriciye ait herhangi bir sunucuya gönderilmez, çevrim içi bir hesapla
+        eşleştirilmez ve üçüncü taraflara aktarılmaz.
+      </p>
+      <p>
+        Uygulama silindiğinde, cihaz içerisinde saklanan bu kayıtlar da silinir.
+      </p>
+    </section>
 
-Bu servislerin gizlilik politikalarına aşağıdaki bağlantılardan ulaşabilirsiniz:
+    <section class="card">
+      <h2>Toplanan veya İşlenen Veriler</h2>
+      <p>
+        Cepte Bütçem kullanıcı hesabı oluşturmaz; ad, soyad, e-posta, telefon numarası, adres,
+        banka hesabı, kart bilgisi veya benzeri kişisel kimlik bilgilerini toplamaz.
+      </p>
+      <p>
+        Ancak uygulama, performans iyileştirme, hata takibi, analiz ve reklam gösterimi amacıyla
+        aşağıdaki üçüncü taraf hizmetleri kullanabilir:
+      </p>
+      <ul>
+        <li>Google AdMob</li>
+        <li>Firebase Analytics</li>
+        <li>Firebase Crashlytics</li>
+      </ul>
+      <p>Bu hizmetler aşağıdaki türde verileri işleyebilir:</p>
+      <ul>
+        <li>Uygulama etkileşimleri ve kullanım istatistikleri</li>
+        <li>Çökme günlükleri ve hata raporları</li>
+        <li>Tanılama ve performans bilgileri</li>
+        <li>Cihaz veya reklam kimlikleri</li>
+      </ul>
+    </section>
 
-https://policies.google.com/privacy
+    <section class="card">
+      <h2>Verilerin Kullanım Amaçları</h2>
+      <p>Toplanan veya işlenen veriler aşağıdaki amaçlarla kullanılabilir:</p>
+      <ul>
+        <li>Uygulama performansını iyileştirmek</li>
+        <li>Hataları ve çökmeleri tespit etmek</li>
+        <li>Kullanıcı deneyimini geliştirmek</li>
+        <li>Reklam gösterimini sağlamak ve optimize etmek</li>
+        <li>Güvenlik, sahtekarlık önleme ve yasal uyumluluk süreçlerini desteklemek</li>
+      </ul>
+    </section>
 
-## Çocukların Gizliliği
+    <section class="card">
+      <h2>Üçüncü Taraf Hizmetleri</h2>
+      <p>
+        Uygulamada kullanılan Google hizmetleri, kendi gizlilik politikaları kapsamında veri
+        işleyebilir. Google gizlilik politikası hakkında daha fazla bilgi için aşağıdaki bağlantıyı
+        ziyaret edebilirsiniz:
+      </p>
+      <p>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+          Google Gizlilik Politikası
+        </a>
+      </p>
+    </section>
 
-Uygulama özellikle çocuklara yönelik değildir.
+    <section class="card">
+      <h2>Veri Güvenliği</h2>
+      <p>
+        Uygulamada kullanılan üçüncü taraf hizmetlerle yapılan veri aktarımları, sektör standardı
+        güvenlik yöntemleri kullanılarak korunur.
+      </p>
+      <p>
+        Kullanıcı tarafından oluşturulan gelir-gider kayıtları cihaz içerisinde saklanır ve
+        geliştirici tarafından uzaktan erişilebilir değildir.
+      </p>
+    </section>
 
-## Güvenlik
+    <section class="card">
+      <h2>Çocukların Gizliliği</h2>
+      <p>
+        Cepte Bütçem özellikle çocuklara yönelik olarak tasarlanmamıştır. Uygulama bilerek
+        çocuklardan kişisel bilgi toplamaz.
+      </p>
+    </section>
 
-Verilerin korunması için sektör standardı güvenlik yöntemleri kullanılmaktadır.
+    <section class="card">
+      <h2>Politika Değişiklikleri</h2>
+      <p>
+        Bu gizlilik politikası zaman zaman güncellenebilir. Güncellemeler bu sayfa üzerinden
+        yayınlanır ve sayfanın üst kısmındaki son güncelleme tarihi değiştirilir.
+      </p>
+    </section>
 
-## İletişim
+    <section class="card">
+      <h2>İletişim</h2>
+      <p>
+        Gizlilik politikası veya uygulama hakkında sorularınız için aşağıdaki e-posta adresinden
+        iletişime geçebilirsiniz:
+      </p>
+      <p>
+        <a href="mailto:melihbaltaa@icloud.com">melihbaltaa@icloud.com</a>
+      </p>
+    </section>
 
-Herhangi bir soru veya talepleriniz için:
+    <div class="footer">
+      © 2026 Cepte Bütçem. Tüm hakları saklıdır.
+    </div>
+  </main>
+</body>
+</html>
+"""
 
-E-posta: [melihbaltaa@icloud.com](mailto:melihbaltaa@icloud.com)
-
-adresinden iletişime geçebilirsiniz.
+path = Path("/mnt/data/index.html")
+path.write_text(html, encoding="utf-8")
+path
